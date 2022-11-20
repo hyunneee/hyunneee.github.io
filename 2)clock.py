@@ -1,4 +1,3 @@
-# 20211060 ohseohyun
 from datetime import datetime
 import numpy as np
 import cv2
@@ -179,8 +178,8 @@ def main():
         circle = circle.astype('int')
         drawPolygon(canvas,circle,(255,255,255),axis = False)
         drawColored(canvas,circle,(255,255,255))
-    
-        hour_rect = H1 @ makeRmat(hour*30+min) @ makeTmat(0,-h/2) @ hour_rect.T
+        
+        hour_rect = H1 @ makeRmat((hour*30+min/2)) @ makeTmat(0,-h/2) @ hour_rect.T
         hour_rect = hour_rect.T
         hour_rect = hour_rect.astype('int')
         drawPolygon(canvas,hour_rect,(0,255,0),axis = False)
