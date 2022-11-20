@@ -43,28 +43,6 @@ def drawPolygon(canvas, pts, color, axis=False):
     #
     return 
 
-def getstar(canvas, pts, color,axis=False):
-    drawLine(canvas, pts[0,0], pts[0,1], 
-                        pts[2,0], pts[2,1], color)
-    drawLine(canvas, pts[0,0], pts[0,1], 
-                        pts[3,0], pts[3,1], color)
-    drawLine(canvas, pts[1,0], pts[1,1], 
-                        pts[3,0], pts[3,1], color)
-    drawLine(canvas, pts[1,0], pts[1,1], 
-                        pts[4,0], pts[4,1], color)
-    drawLine(canvas, pts[2,0], pts[2,1], 
-                        pts[4,0], pts[4,1], color)
-    if axis == True: # center - pts[0]
-        center = np.array([0., 0, 0])
-        for p in pts:
-            center += p 
-        center = center / pts.shape[0]
-        center = center.astype('int') 
-        # print(center)
-        drawLine(canvas, center[0],center[1], pts[0][0],pts[0][1], color=(255, 128, 128))
-    return pts
-
-
 def deg2rad(deg):
     rad = deg * np.pi / 180.
     return rad 
